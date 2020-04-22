@@ -1,0 +1,33 @@
+Cases:
+	If Jenkins and Database are well configured:
+		1. Data is fetched from Jenkins
+		2. Data is sent to mongoDB asynchronously
+		3. Data is sent to UI(This happens as soon as data is fetched from Jenkins)
+		
+		When data insertion or updation is complete at mongoDB, then at console we will get number of rows inserted and updated.
+	
+	If Jenkins is not reachable, but Database is well configured: (To get this condition, change value in Jenkins env variables)
+		Data is fetched from mongoDB, given database and collection are already present:
+			a. Data is sent to UI
+		
+		Data is fetched from mongoDB, but database or collection or both are not present:
+			a. Empty array is returned from mongoDB, thus below string is sent to UI 
+				"No data is present at moment. Please check your configuration..."
+			
+	If Jenkins is reachable, but Database is not well configured: (To get this condition, change password of mongoDB)
+		1. Data is fetched from Jenkins
+		2. Data is sent to mongoDB asynchronously
+		3. Data is sent to UI(This happens as soon as data is fetched from Jenkins)
+		
+		Data will not be inserted or updated in mongoDB. Logs will have all details with below string also:
+		#########################################
+		
+		
+		There is some problem while connecting to mongoDB. Please check logs.
+
+
+		#########################################
+		
+	If Jenkins is not reachable and Database is not well configured: (To get this condition, change value in Jenkins env variables and change password of mongoDB)
+		Below string is returned to UI:
+			"Either Jenkins or mongoDB is not configured properly. Please check logs and configuration..."
