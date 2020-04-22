@@ -18,8 +18,8 @@ This API gives below two routes:
 To get this API running, first you need to set below environment variables:
 
 
-Variable Key          | Variable Description                 | Variable Example
---------------------- | ------------------------------------ | -----------------
+Variable Key          | Variable Description                 | Variable Example Value
+--------------------- | ------------------------------------ | -----------------------
 JENKINS_MASTER        | Domain name of Jenkins Instance      | localhost:8085
 JENKINS_USERNAME      | Username of admin account in Jenkins | admin
 JENKINS_PASSWORD      | Password of admin account in Jenkins | password
