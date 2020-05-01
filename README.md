@@ -1,4 +1,4 @@
-# Jenkins Dashboard Api
+# Jenkins Dashboard API
 
 This API is designed to fetch data from Jenkins and store the fetched data in mongoDB.
 
